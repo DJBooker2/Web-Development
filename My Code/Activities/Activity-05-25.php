@@ -19,7 +19,6 @@
     echo "<span style='color:blue;'>My first php program</span>";
     $color = "cyan";
     ?>
-
     <p>
         // Hard Code Example
         //This is something else that is also <span style='color:green'> colorful </span>.
@@ -45,7 +44,7 @@
 
     echo "The number in float with 2 decimal digits is: " . round($Num, 2) . "<br/>"; // self defined names are case sensitive
 
-    eChO "Echo is not case sensitive<br/>"; //PHP keywords are case insensitive
+    echo "Echo is not case sensitive<br/>"; //PHP keywords are case insensitive
     ?>
 </body>
 </head>
