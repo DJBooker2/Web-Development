@@ -1,0 +1,17 @@
+==============================================================================================================================================================
+================================================================= PHP NOTES DJ BOOKER ======================
+=============================================================================
+
+- Different Method Types - 
+    Short style ($tireqty) is convenient but requires the register_globalsconfigu-ration setting be turned on. 
+    For security reasons, this setting is turned off bydefault.This style makes it easy to make errors that could make your code insecure, 
+    which is why it is no longer the recommended approach. It would be a badidea to use this style in a new code as the option is likely to disappear in PHP6.
+    
+    Medium style ($_POST[‘tireqty’]) is the recommended approach.  If you createshort versions of variable names, 
+    based on the medium style (as we do in this book), it is not a security issue and instead is simply on ease-of-use 
+    issue.03_0672329166_ch01.qxd
+
+    Long style ($HTTP_POST_VARS[‘tireqty’]) is the most verbose. Note, however,that it is deprecated and is therefore likely 
+    to be removed in the long term.This style used to be the most portable but can now be disabled via theregister_long_arraysconfiguration 
+    directive, which improves performance. So again using it in new code is probably not a good idea unless you have reason to think that your 
+    software is particularly likely to be installed on old servers.
