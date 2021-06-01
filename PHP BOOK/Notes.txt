@@ -39,3 +39,111 @@
     the long term. This style used to be the most portable but can now be disabled via the register_long_arrays configuration directive, which 
     improves performance. So again using it in new code is probably not a good idea unless you have reason to think that your software is particularly 
     likely to be installed on old servers.
+
+    When we use a piece of raw data in a program like this, we call it a literal. wo kinds of strings mentioned already: ones with double quotation marks
+    and ones with single quotation marks.
+
+    --Heredoc Syntax--
+        echo <<<theEnd
+            line 1
+            line 2
+            line 3
+          theEnd
+
+    PHP’s Data Types
+    PHP supports the following basic data types:
+        Integer — Used for whole numbers
+        Float(also called double) — Used for real numbers
+        String — Used for strings of characters
+        Boolean — Used for true or false values
+        Array — Used to store multiple data items (see Chapter 3, “Using Arrays”)
+        Object — Used for storing instances of classes (see Chapter 6)
+    
+    A variable variable works by using the value of one variable as the name of another.For example, you could set $varname = ‘tireqty’;
+    You can then use $$varname in place of $tireqty. For example, you can set the value of $tireqty as follows:$$varname = 5;
+    This is exactly equivalent to $tireqty = 5;
+
+    You can define constants using the define function:
+                define(‘TIREPRICE’, 100);
+                define(‘OILPRICE’, 10);
+                define(‘SPARKPRICE’, 4);
+
+
+    The six basic scope rules in PHP are as follows:
+            Built-in superglobal variables are visible everywhere within a script.
+            Constants, once declared, are always visible globally; that is, they can be used inside and outside functions.
+            Global variables declared in a script are visible throughout that script, but not inside functions.
+            Variables inside functions that are declared as global refer to the global variables of the same name.
+            Variables created inside functions and declared as static are invisible from outside the function but keep their 
+                value between one execution of the function and the next. (We explain this idea fully in Chapter 5.)n\
+            Variables created inside functions are local to the function and cease to exist when the function terminates.
+
+    
+    The complete list of superglobals is as follows:
+        $GLOBALS — An array of all global variables (Like the global keyword, this allows you to access global variables inside a function—for example, as$GLOBALS[‘myvariable’].)
+        $_SERVER — An array of server environment variables
+        $_GET — An array of variables passed to the script via the GET method
+        $_POST — An array of variables passed to the script via the POST method
+        $_COOKIE — An array of cookie variables
+        $_FILES — An array of variables related to file uploads
+        $_ENV — An array of environment variables
+        $_REQUEST — An array of all user input including the contents of input including $_GET, $_POST, and $_COOKIE (but not including $_FILES since PHP 4.3.0)
+        $_SESSION—An array of session variables
+
+
+    PHP’s Arithmetic Operators
+        Operator           Name            Example
+            +            Addition          $a + $b
+            -           Subtraction        $a - $b
+            *         Multiplication       $a * $b
+            /           Division           $a / $b
+            %            Modulus           $a % $b
+
+
+    PHP’s Combined Assignment Operators
+        Operator          Use             Equivalent To
+           +=          $a += $b           $a = $a + $b
+           -=          $a -= $b           $a = $a - $b
+           *=          $a *= $b           $a = $a * $b
+           /=          $a /= $b           $a = $a / $b
+           %=          $a %= $b           $a = $a % $b
+           .=          $a .= $b           $a = $a . $b
+
+
+    You can avoid making a copy by using the reference operator. 
+            For example,
+                $a = 5;
+                $b = &$a;
+                $a = 7; // $a and $b are now both 7
+
+    
+    PHP’s Comparison Operators
+        Operator                Name                       Use
+          ==                   Equals                    $a == $b
+         ===                  Identical                  $a === $b
+          !=                  Not equal                  $a != $b
+         !==                 Not identical               $a !== $b
+         <>          Not equal (comparison operator)     $a <> $b
+          <                   Less than                  $a < $b
+          >        Greater than (comparison operator)    $a > $b
+         <=            Less than or equal to             $a <= $b
+         >=           Greater than or equal to           $a >= $b
+
+    PHP’s Logical Operators
+        Operator            Name              Use               Result
+           !                NOT               !$b         Returns true if $b is false and vice versa
+          &&                AND             $a && $b      Returns true if both $a and $b are true; otherwise false
+           ||               OR              $a || $b      Returns true if either $a or $b or both are true; otherwise false 
+         and                AND            $a and $b      Same as &&, but with lower precedence 
+          or                OR              $a or $b      Same as ||, but with lower precedence 
+         xor                XOR            $a x or $b     Returns true if either $a or $b is true, and false if they are both true or both false.
+
+
+    PHP’s Bitwise Operators
+        Operator        Name           Use         Result
+           &          Bitwise AND    $a & $b     Bits set in $a and $b are set in the result.
+           |          Bitwise OR     $a | $b     Bits set in $a or $b are set in the result.
+           ~          Bitwise NOT      ~$a       Bits set in $a are not set in the result and vice versa.
+           ^          Bitwise XOR    $a ^ $b     Bits set in $aor $b but not in both are set in the result.
+           <<         Left shift     $a << $b    Shifts $a left $b bits.
+           >>         Right shift    $a >> $b    Shifts $a right $b bits.
