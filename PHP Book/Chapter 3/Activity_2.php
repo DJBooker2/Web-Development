@@ -72,7 +72,7 @@ Create a program which uses a conditional statement that will determine what col
     </form>
 
     <?php
-    echo "<br>";
+    echo "<hr/>";
     echo $colorMSG;
     ?>
 </body>
@@ -82,4 +82,5 @@ Create a program which uses a conditional statement that will determine what col
 <h1>#2</h1>
 <hr />
 <br />
+
 </html>
