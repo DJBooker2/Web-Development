@@ -1,0 +1,69 @@
+- Arrays -
+    $team = array('Bill', 'Mary', 'Mike', 'Chris', 'Anne'); // Array holding names
+    echo $team[3]; // Displays the name Chris
+
+- Two Dimensional Arrays -
+    <?php  
+        $oxo = array(array('x', ' ', 'o'),
+                     array('o', 'o', 'x'),
+                     array('x', 'o', ' '));
+
+        echo $oxo[1][2]; // Will display 'x'
+    ?>
+
+- Variable-naming rules -
+    When creating PHP variables, you must follow these four rules:
+        •Variable names, after the dollar sign, must start with a letter of the alphabet or the _ (underscore) character.
+        •Variable names can contain only the characters a-z, A-Z, 0-9, and _ (underscore).
+        •Variable names may not contain spaces. If a variable name must comprise more than one word, a good idea is to separate the words with the _(underscore) character (e.g., $user_name).
+        •Variable names are case-sensitive. The variable $High_Score is not the same as the variable $high_score.
+
+Operators let you specify mathematical operations to perform, such as addition, sub‐traction, multiplication, and division.
+
+- Arithmetic operators -
+        Operator    Description                Example
+        +            Addition                    $j+1
+        -           Subtraction                  $j-6
+        *          Multiplication                $j*11
+        /            Division                    $j/4
+        %     Modulus (the remainder after a     $j%9
+                    division is performed)     
+        ++           Increment                   ++$j
+        --           Decrement                   --$j
+        **         Exponentiation (or power)     $j**2
+
+- Assignment operators -
+        Operator        Example        Equivalent to
+        =               $j = 15          $j = 15
+        +=              $j += 5          $j = $j + 5
+        -=              $j -= 3          $j = $j - 3
+        *=              $j *= 8          $j = $j * 8
+        /=              $j /= 16         $j = $j / 16
+        .=              $j .= $k         $j = $j . $k
+        %=              $j %= 4          $j = $j % 4
+
+- Comparison operators -
+        Operator  Description                   Example
+        ==        Is equal to                   $j == 4
+        !=        Is not equal to               $j != 21
+        >         Is greater than               $j > 3
+        <         Is less than                  $j < 100
+        >=        Is greater than or equal to   $j >= 15
+        <=        Is less than or equal to      $j <= 8
+        <>        Is not equal to to            $j <> 23
+        ===       Is identical to to            $j === "987"
+        !==       Is not identical to to        $j !== "1.2e3"
+
+- Logical operators -
+        Operator   Description               Example
+        &&         And                       $j == 3 && $k == 2
+        and        Low-precedence and        $j == 3 and $k == 2
+        ||         Or                        $j < 5 || $j > 10
+        or         Low-precedence or         $j < 5 or $j > 10
+        !          Not                       ! ($j == $k)
+        xor        Exclusive or              $j xor $k
+
+- Escaping characters -
+    $text = 'My spelling's atroshus'; // Erroneous syntax
+    $text = 'My spelling\'s still atroshus'; // Correct syntax
+
