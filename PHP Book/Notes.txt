@@ -67,3 +67,77 @@ Operators let you specify mathematical operations to perform, such as addition, 
     $text = 'My spelling's atroshus'; // Erroneous syntax
     $text = 'My spelling\'s still atroshus'; // Correct syntax
 
+An  expression  is  a  combination  of  values,  variables,  operators,  and  functions  that results in a value.
+    y = 3 (|2x| + 4)
+        IN PHP:
+            $y = 3 * (abs(2 * $x) + 4); // abs() gets the absolute value of the parameters
+
+A  literal  simply  means  something  that  evaluates  to  itself,  such  as  the number  73  or  the  string  "Hello".
+
+ - Operators -
+        Operator                 Description                    Example
+        Arithmetic               Basic mathematics              $a + $b
+        Array                    Array union                    $a + $b
+        Assignment               Assign values                  $a = $b + 23
+        Bitwise                  Manipulate bits within bytes   12 ^ 9
+        Comparison               Compare two values             $a < $b
+        Execution                Execute contents of backticks  `ls -al`
+        Increment/decrement      Add or subtract 1              $a++
+        Logical                  Boolean                        $a and $b
+        String                   Concatenation                  $a . $b
+
+Each operator takes a different number of operands:
+    •Unary  operators,  such  as  incrementing  ($a++)  or  negation  (!$a),  take  a  single operand.
+    •Binary operators, which represent the bulk of PHP operators (including addition,subtraction, multiplication, and division), 
+        take two operands.
+    •The  one  ternary  operator,  which  takes  the  form  expr ? x : y,  requires  three operands. It’s a terse, single-line 
+        if statement that returns x if m expr is TRUE andy if expr is FALSE.
+
+- Operation Precedence -
+        Operator(s)                             Type
+        ()                                      Parentheses
+        ++ --                                   Increment/decrement
+        !                                       Logical
+        * / %                                   Arithmetic
+        + - .                                   Arithmetic and string
+        << >>                                   Bitwise
+        < <= > >= <>                            Comparison
+        == != === !==                           Comparison
+        &                                       Bitwise (and references)
+        ^                                       Bitwise
+        |                                       Bitwise
+        &&                                      Logical
+        ||                                      Logical
+        ? :                                     Ternary
+        = += -= *= /= .= %= &= != ^= <<= >>=    Assignment
+        and                                     Logical
+        xor                                     Logical
+        or                                      Logical
+
+- Associativity -
+        Associativity becomes  important  in  cases  in  which  you  do not explicitly force precedence, so you need to be aware 
+        of the default actions of operators.
+                Operator                    Description                      Associativity
+                < <= >= == != === !== <>    Comparison                       None
+                !                           Logical NOT                      Right
+                ~                           Bitwise NOT                      Right
+                ++ --                       Increment and decrement          Right
+                (int)                       Cast to an integer               Right
+                (double) (float) (real)     Cast to a floating-point number  Right
+                (string)                    Cast to a string                 Right
+                (array)                     Cast to an array                 Right
+                (object)                    Cast to an object                Right
+                @                           Inhibit error reporting          Right
+                = += -= *= /=               Assignment                       Right
+                .= %= &= |= ^= <<= >>=      Assignment                       Right
+                +                           Addition and unary plus          Left
+                -                           Subtraction and negation         Left
+                *                           Multiplication                   Left
+                /                           Division                         Left
+                %                           Modulus                          Left
+                .                           String concatenation             Left
+                << >> & ^ |                 Bitwise                          Left
+                ?:                          Ternary                          Left
+                || && and or xor            Logical                          Left
+                ,                           Separator                        Left
+
