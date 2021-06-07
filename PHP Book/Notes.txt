@@ -157,5 +157,13 @@ Each operator takes a different number of operands:
     (array)                        Cast to an array.
     (object)                       Cast to an object.
 
+An  object  incorporates  one  or  more  functions, and the data they use, into a single structure called a class.
+        function function_name([parameter [, ...]])
+        {  
+            // Statements
+        }
+
+
+
 
 
