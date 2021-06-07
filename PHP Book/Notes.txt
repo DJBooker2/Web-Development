@@ -141,3 +141,21 @@ Each operator takes a different number of operands:
                 || && and or xor            Logical                          Left
                 ,                           Separator                        Left
 
+- Logical Operators -
+    Logical  operators  produce  true  or  false  results,  and  therefore  are  also  known  as Boolean operators.
+        Logical operator       Description
+        AND                    TRUE if both operands are TRUE
+        OR                     TRUE if either operand is TRUE
+        XOR                    TRUE if one of the two operands is TRUE
+        ! (NOT)                TRUE if the operand is FALSE, or FALSE if the operand is TRUE
+
+    Cast type                      Description
+    (int) (integer)                Cast to an integer by dropping the decimal portion.
+    (bool) (boolean)               Cast to a Boolean.
+    (float) (double) (real)        Cast to a floating-point number.
+    (string)                       Cast to a string.
+    (array)                        Cast to an array.
+    (object)                       Cast to an object.
+
+
+
