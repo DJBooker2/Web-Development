@@ -163,7 +163,13 @@ An  object  incorporates  one  or  more  functions, and the data they use, into 
             // Statements
         }
 
+Logical  operators  produce  true  or  false  results,  and  therefore  are  also  known  as Boolean operators.
+    Logical operator           Description
+    AND                        TRUE if both operands are TRUE
+    OR                         TRUE if either operand is TRUE
+    XOR                        TRUE if one of the two operands is TRUE
+    ! (NOT)                    TRUE if the operand is FALSE, or FALSE if the operand is TRUE
 
-
+Conditionals  alter  program  flow.  They  enable  you  to  ask  questions  about  certain things and respond to the answers you get in different ways.
 
 
