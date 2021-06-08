@@ -74,4 +74,34 @@ echo "<br>";
 ?>
 
 <!--Four Comparison Operators-->
->?php
+<?php
+$a3 = 2;
+$b3 = 3;
+
+if ($a3 > $b3) {
+    echo "$a3 is greater than $b3 <br";
+}
+if ($a3 < $b3) {
+    echo "$a3 is less than $b3 <br>";
+}
+if ($a3 >= $b3) {
+    echo "$a3 is greater than or equal to $b3 <br>";
+}
+if ($a3 <= $b3) {
+    echo "$a3 is less than or equal to $b3 <br>";
+}
+echo "<hr />";
+?>
+
+<!--Logical Operators-->
+<?php
+$a4 = 1;
+$b4 = 0;
+
+echo ($a4 and $b4) . "<br>";
+echo ($a4 or $b4) . "<br>";
+echo ($a4 xor $b4) . "<br>";
+echo !$a4 . "<br>";
+echo "<hr />";
+echo "<br>";
+?>
