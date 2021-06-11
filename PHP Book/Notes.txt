@@ -172,4 +172,13 @@ Logical  operators  produce  true  or  false  results,  and  therefore  are  als
 
 Conditionals  alter  program  flow.  They  enable  you  to  ask  questions  about  certain things and respond to the answers you get in different ways.
 
+- For Loops -
+    Each  for  statement  takes  three  parameters:
+        •An initialization expression
+        •A condition expression
+        •A modification expression
+
+The continue statement is a little like a break statement, except that it instructs PHPto stop processing the current iteration of the loop and move right 
+to its next iteration. So, instead of breaking out of the whole loop, PHP exits only the current iteration.
+
 
