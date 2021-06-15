@@ -4,114 +4,127 @@
     This program will demonstrate 2d arrays
 -->
 
-<html>
+<?php
+// Initialize 2D array
+$Students = array(
+	array("Mike", 22, "Male"),
+	array("Jason", 18, "Male"),
+	array("Jenny", 25, "Female"),
+	array("Megan", 18, "Female")
+);
 
-<head>
-	<style>
-		.error {
-			color: red;
-		}
-	</style>
-	<title>
-		Lab 6
-	</title>
-</head>
-
-<body>
-	<?php
-
-	$search = $searchMSG = "";
-
-	function validate_input($input)
-	{
-		$input = trim($input);
-		$input = htmlspecialchars($input);
-		return $input;
+//Display all the info of the 2D array as list
+for ($row = 0; $row < count($Students); $row++) {
+	echo "<p><b>Students No. " . ($row + 1) . "</b></p>";
+	echo "<ul>";
+	for ($col = 0; $col < count($Students[$row]); $col++) {
+		echo "<li>" . $Students[$row][$col] . "</li>";
 	}
-	if ($_POST["submit"]) {
-		$search = validate_input($_POST["search"]);
-		if (empty($search))
-			$searchMSG = "Search box is required!";
+	echo "</ul>";
+}
+
+// Display names using foreach loop
+echo "<hr />";
+foreach ($Students as $index => $person) {
+	echo "<p><b>Students No. " . ($index + 1) . "</b></p>";
+	echo "<ul>";
+	foreach ($person as $value)
+		echo "<li>" . $value . "</li>";
+	echo "</ul>";
+}
+
+// Display the 2D array using a table ( BEST WAY!!! )
+echo "<hr />";
+echo "<table border=1>";
+echo "<tr>
+		<th>No.</th>
+		<th>Name</th>
+		<th>Age</th>
+		<th>Gender</th>
+	</tr>";
+foreach ($Students as $row => $person) {
+	echo "<tr>";
+	echo "<td>" . ($row + 1) . "</td>";
+	foreach ($person as $value)
+		echo "<td>" . $value . "</td>";
+	echo "</tr>";
+}
+echo "</table>";
+
+?>
+
+<hr />
+
+<?php
+$name = "Jenny";
+foreach ($Students as $person) {
+	if ($name == $person[0]) {
+		echo "$name: " . $person[0] . " Age: " . $person[1] . " Gender: " . $person[2] . "<br/>";
 	}
+}
 
-	?>
+$Students[50] = array("Jason", 26, "Male");
+$name = "Jason";
+echo "<hr/>";
+$found = 0;
+foreach ($Students as $person) {
+	if ($name == $person[0]) {
+		$found++;
+		echo "$name: " . $person[0] . " Age: " . $person[1] . " Gender: " . $person[2] . "<br/>";
+	}
+}
 
-	<!--<div style="background-color:pink;width:60%;margin:auto;text-align:center;">-->
-	<div style="width:60%;margin:auto;">
-		<h1>City Info Query System</h1>
+echo "Totally there are " . $found . " with name: " . $name . " found.<br/>";
 
-		<form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
-			<p><span class="error">*required field.</span></p>
+echo "<hr />";
+// Find youngest person
+$found = 0;
+$youngest = 200;
+foreach ($Students as $person) {
+	if ($person[1] < $youngest) {
+		$youngest = $person[1];
+	}
+}
+foreach ($Students as $person) {
+	if ($person[1] == $youngest) {
+		$found++;
+		echo "The youngest person: " . $person[0] . " Age: " . $person[1] . " Gender: " . $person[2] . "<br/>";
+	}
+}
 
-			Query by:
-			<select name="query">
-				<option value="City" <?php if ($query == "City") echo "selected"; ?>>City</option>
-				<option value="State" <?php if ($query == "State") echo "selected"; ?>>State</option>
-				<option value="Income" <?php if ($query == "Income") echo "selected"; ?>>Income</option>
-			</select> <br /><br />
+echo "Totally there are " . $found . " students with this youngest age: " . $youngest . " found.<br/>";
 
-			Type the State, City Name or Income that you want to search: <input type="text" name="search" value="<?php echo $search; ?>">
-			<span style="color:red;">*<?php echo $searchMSG; ?></span>
-			<br /><br />
-			<input type=submit name=submit value=submit>
-		</form>
-		<hr />
+$Students[8] = array("Josh", 26, "Male");
+$Students[18] = array("Kobe", 26, "Male");
+echo "<hr/>";
 
+// Find oldest person
+$found = 0;
+$oldest = 0;
+foreach ($Students as $person) {
+	if ($person[1] > $oldest) {
+		$oldest = $person[1];
+	}
+}
+foreach ($Students as $person) {
+	if ($person[1] == $oldest) {
+		$found++;
+		echo "The oldest person(s): " . $person[0] . " Age: " . $person[1] . " Gender: " . $person[2] . "<br/>";
+	}
+}
 
-		<?php
+echo "Totally there are " . $found . " students with this youngest age: " . $oldest . " found.<br/>";
 
-		$CitiInfo = array(
-			array("New York", "NY", 8008278, 103246, 12345),
-			array("Los Angeles", "CA", 3694820, 100000, 12346),
-			array("Chicago", "IL", 2896016, 93591, 12347),
-			array("Houston", "TX", 1953631, 98174, 12348),
-			array("Philadelphia", "PA", 1517550, 91083, 12349),
-			array("Phoenix", "AZ", 1321045, 83412, 29874),
-			array("San Diego", "CA", 1223400, 99247, 29875),
-			array("Dallas", "TX", 1188580, 90111, 29876),
-			array("San Antonio", "TX", 1144646, 89925, 29877),
-			array("Detroit", "MI", 951270, 80188, 29878)
-		);
+echo "<hr/>";
+// Find all male students
+$found = 0;
+foreach ($Students as $person) {
+	if ($person[2] == "Male") {
+		$found++;
+		echo "The male person: " . $person[0] . " Age: " . $person[1] . " Gender: " . $person[2] . "<br/>";
+	}
+}
 
-		$found = 0;
-		if ($_POST["submit"]) {
-			if (empty($search))
-				echo "<br/>";
+echo "Totally there are " . $found . " male students found.<br/>";
 
-			else {
-				echo "<table border = 1>";
-				echo "<tr><td>City</td><td>State</td><td>Population</td><td>Income</td>
-       <td>Zipcode</td></tr>";
-				foreach ($CitiInfo as $search) {
-
-					if ($_POST["query"] == "City" && $_POST["search"] == $search[0]) {
-						foreach ($search as $value)
-							echo "<td>" . $value . "</td>";
-						$found++;
-					} else if ($_POST["query"] == "State" && $_POST["search"] == $search[1]) {
-						echo "<tr>";
-						foreach ($search as $value)
-							echo "<td>" . $value . "</td>";
-						$found++;
-						echo "<tr>";
-					} else if ($_POST["query"] == "Income" && $_POST["search"] <= $search[3]) {
-						echo "<tr>";
-						foreach ($search as $value)
-							echo "<td>" . $value . "</td>";
-						$found++;
-						echo "</tr>";
-					}
-				}
-				echo "</table>";
-				echo "We found " . $found . " results matching your search.</br>";
-			}
-		}
-
-
-
-
-		?>
-	</div>
-</body>
-
-</html>
+?>
