@@ -5,6 +5,8 @@
 		"fieldinfo",
 		"firstname",
 		"lastname",
+		"searchterm",
+		"searchtype",
 		"servername"
 	]
 }
