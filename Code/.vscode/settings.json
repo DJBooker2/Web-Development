@@ -1,5 +1,10 @@
 {
 	"cSpell.words": [
-		"bday"
+		"VARCHAR",
+		"bday",
+		"fieldinfo",
+		"firstname",
+		"lastname",
+		"servername"
 	]
 }
