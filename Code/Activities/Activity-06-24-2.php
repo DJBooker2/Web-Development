@@ -1,34 +1,49 @@
-<?php
-session_start();
-?>
+<!--
+    Programmed By: DJ Booker
+    June 24, 2021
+    This program will demonstrate sessions
+-->
 
+<html>
 
-<h1>Thank you for your payment</h1>
-Totally $<?php echo $_SESSION["totalCost"]; ?> has been deducted from your credit card: <?php echo $_GET["CCNumber"]; ?><br />
-The following item(s) will be shipped to the following address: <?php echo $_GET["Address"]; ?><br />
+<body>
+	<h1>Welcome to GGC online store</h1>
+	<form method=post action="Action-06-24-1.php">
+		<table border=0>
+			<tr>
+				<td>Item</td>
+				<td>Price</td>
+				<td>Want to buy?</td>
+				<td>Quantity</td>
+			</tr>
+			<?php
+			$products = array(
+				array("PC", 399, "https://images-na.ssl-images-amazon.com/images/I/41vCoY7c2KL.jpg"),
+				array("iPhone", 999, "https://images-na.ssl-images-amazon.com/images/I/81ZJNQZBFCL._SL1500_.jpg"),
+				array("iMAC", 1899, "https://images-na.ssl-images-amazon.com/images/I/31j0uJP6G5L.jpg")
+			);
+			foreach ($products as $item) {
+				$name = $item[0];
+				$price = $item[1];
+				$image = $item[2];
+				echo "<tr>";
+				echo "<td><img src='" . $image . "' width=100 height=100>
+    <input type=hidden name='name[]' value='" . $name . "'>
+    <input type=hidden name='image[]' value='" . $image . "'
+    <td/>
+    <td>" . $price . "
+    <input type=hidden name='price[]' value='" . $price . "'><td/>
+    <td><input type=checkbox name='buy[]' value='YES'></td>
+    <td><input type=number name='amount[]' value=1 min=0
+    </td>";
+				echo "</tr>";
+			}
+			?>
+			<tr>
+				<td colspan=4><input type="submit" name="submit" value="Add to cart">
+			</tr>
+		</table>
+	</form>
+</body>
 
-<hr />
-<?php
-
-echo "<table style='width=60%; margin:auto'>";
-echo "<tr>";
-echo "<th>Item</th><th>Price</th><th>Quantity</th><th>Cost</th>";
-echo "</tr>";
-foreach ($_SESSION["buy"] as $item) {
-	echo "<tr>";
-	echo "<td><img src='" . $item[1] . "' width=100 height=100></td>";
-	echo "<td>" . $item[2] . "</td>";
-	echo "<td>" . $item[3] . "</td>";
-	echo "<td>" . $item[2] * $item[3] . "</td>";
-	echo "</tr>";
-}
-echo "</table>";
-?>
-
-<?php
-session_unset();
-session_destroy();
-?>
-
-<hr />
-Your purchase transaction is done. Please click <a href='lab9.php'>here</a> to buy more!<br />
+</html>

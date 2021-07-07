@@ -2,11 +2,13 @@
 	"cSpell.words": [
 		"VARCHAR",
 		"bday",
+		"endforeach",
 		"fieldinfo",
 		"firstname",
 		"lastname",
 		"searchterm",
 		"searchtype",
-		"servername"
+		"servername",
+		"showanswer"
 	]
 }
