@@ -3,7 +3,7 @@ function My_Connect_DB()
 {
 	$servername = "localhost";
 	$username = "webtechnologysite"; //you need to change to your login id
-	$password = "QLUXVGqAomausXy3RDBnK31oTlS6YJtnaKK8mGDvTjgFWRaUXLER8iRXzC15owg0eVxrSqOeedlq1kP3"; //altervista will use your login password
+	$password = "Speedracer4"; //altervista will use your login password
 	$dbname = "my_webtechnologysite";
 	$conn = mysqli_connect($servername, $username, $password, $dbname);
 	if (!$conn)
@@ -48,8 +48,8 @@ function Run_Select_Show_Result($conn, $sql) // Must be select statement
 
 function Run_Sql_Show_Result($conn, $sql, $table)
 {
-	My_SQL_EXE($conn,$sql);
-	$sql = "SELECT * FROM ". $table.";";
+	My_SQL_EXE($conn, $sql);
+	$sql = "SELECT * FROM " . $table . ";";
 	Run_Select_Show_Result($conn, $sql);
 }
 
@@ -57,4 +57,33 @@ function My_Disconnect_DB($conn)
 {
 
 	mysqli_close($conn);
+}
+
+function UploadFile($tagName, $fileAllowed, $sizeAllowed, $overwriteAllowed)
+{
+	$uploadOK = 1;
+	$dir = "upload/";
+	$file = $dir . basename($_FILES[$tagName]["name"]);
+	$fileType = pathinfo($file, PATHINFO_EXTENSION);
+	$fileSize = $_FILES[$tagName]["size"];
+	if ($fileSize > $sizeAllowed) {
+		$uploadOK = 0;
+		echo "File is too large<br/>";
+	}
+	if (!stristr($fileAllowed, $fileType)) {
+		$uploadOK = 0;
+		echo "File type is not allowed<br/>";
+	}
+	if (!$overwriteAllowed && file_exists($file)) {
+		$uploadOK = 0;
+		echo "File already exists<br/>";
+	}
+	if ($uploadOK == 1) {
+		if (!move_uploaded_file($_FILES[$tagName]["tmp_name"], $file))
+			$uploadOK = 0;
+	}
+	if ($uploadOK == 1)
+		return $file;
+	else
+		return false;
 }
