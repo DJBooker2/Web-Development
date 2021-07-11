@@ -1,6 +1,6 @@
 <!--
     Programmed By: DJ Booker
-    June 8, 2021
+    June 11, 2021
     This program will demonstrate 
 -->
 
@@ -28,14 +28,14 @@
 	</div>
 	<hr />
 	<div>
-		<h3>If you have not signed up, click <a href=Project3-Signup.php>here</a> to register.</h3>
+		<h3>If you have not signed up, click <a href=Project4Signup.php>here</a> to register.</h3>
 	</div>
 </body>
 
 </html>
+<hr/>
 <?php
-	/*
-	You need to design and create your own database table for this project.
+/*
 	The grade for each student is assigned with a random number between 0-100 when the student signs up.
 	Make sure there are no duplicated student IDs.
 	Make sure you keep the new password in your database after it is changed.
