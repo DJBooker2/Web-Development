@@ -1,7 +1,7 @@
 <!--
     Programmed By: DJ Booker
     June 11, 2021
-    This program will demonstrate 
+    This program will demonstrate retrieving the users information
 -->
 
 <title> Project 4 </title>
@@ -10,7 +10,7 @@
 
 <head>
 	<title>
-		Project 3
+		Project 4
 	</title>
 </head>
 
@@ -18,7 +18,7 @@
 
 	<h1>ITEC 4450 Grade Search System</h1>
 	<div style="border:blue 5px solid;width:50%;text-align:center;position:relative;left:25%;">
-		<form action="Project3-Action-0.php" method="post">
+		<form action="Project4-Action-0.php" method="post">
 			Please type your username:
 			<input type="text" name="userid"><br />
 			Please type your password:

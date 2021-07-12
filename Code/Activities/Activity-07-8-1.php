@@ -21,9 +21,9 @@ session_start(); // start session
 		<input type="submit" name="submit" value="See my information">
 	</form>
 	<hr />
-	Want to sign up, click <a href="Activity-07-08-2.php">here</a>.<br />
-	If you are the boss, click <a href="Activity-07-08-3.php">here</a> to enter.<br />
-	Forget your password? click <a href="Activity-07-08-5.php">here</a> to reset.<br />
+	Want to sign up, click <a href="Activity-07-8-2.php">here</a>.<br />
+	If you are the boss, click <a href="Activity-07-8-3.php">here</a> to enter.<br />
+	Forget your password? click <a href="Activity-07-8-5.php">here</a> to reset.<br />
 	<hr />
 	<?php
 	require_once "My-DB-Functions.php";

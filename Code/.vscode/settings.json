@@ -11,6 +11,7 @@
 		"searchterm",
 		"searchtype",
 		"servername",
-		"showanswer"
+		"showanswer",
+		"userid"
 	]
 }
