@@ -14,7 +14,7 @@
 
 </html>
 
-<!--Title-->
+<!--title-->
 <?php
 echo "<h1> Operators </h1>";
 echo "<hr />";
@@ -105,4 +105,3 @@ echo !$a4 . "<br>";
 echo "<hr />";
 echo "<br>";
 ?>
-
