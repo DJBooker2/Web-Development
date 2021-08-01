@@ -94,4 +94,20 @@ echo "<hr />";
 echo "<br>";
 ?>
 
-// Page 90
+<!-- continue statements -->
+<?php
+  $j = 10;
+
+  while ($j > -10) {
+    $j--;
+
+    if ($j == 0) {
+      continue;
+    }
+    else {
+      echo (10 / $j) . "<br/>";
+    }
+  }
+?>
+
+<!-- Implicit and Explicit Casting -->
