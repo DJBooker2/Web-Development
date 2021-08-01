@@ -16,9 +16,9 @@
 
 <!--title-->
 <?php
-echo "<h1> Operators </h1>";
-echo "<hr />";
-echo "<br>";
+  echo "<h1> Operators </h1>";
+  echo "<hr />";
+  echo "<br>";
 ?>
 
 <!--A multiple-assignment statement-->
